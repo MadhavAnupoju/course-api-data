@@ -17,7 +17,8 @@ public class CourseServiceImpl implements CourseService {
 	@Override
 	public Course getCourseDetails(String courseName) throws Exception {
 		try {
-			return getAllCourses().stream().filter(c->c.getName().equals(courseName)).findFirst().get();
+			//return getAllCourses().stream().filter(c->c.getName().equals(courseName)).findFirst().get();
+			return courseRepository.findByName(courseName);
 		} catch (Exception e) {
 			throw e;
 		}
